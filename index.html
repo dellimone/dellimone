@@ -1,10 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cristiano Baldassi - MSc in Scientific and Data-Intensive Computing, University of Trieste. AI, deep learning, HPC, and data science.">
+  <title>Cristiano Baldassi | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to my GitHub Pages site!</h1>
-    <p>Hello!</p>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">CB</a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#cv" class="nav-link">CV</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="about">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Cristiano Baldassi</h1>
+        <p class="hero-affiliation">University of Trieste</p>
+        <p class="hero-description">
+          Master's student in Scientific and Data-Intensive Computing at University of Trieste,
+          with background in AI and deep learning. Experienced in generative models,
+          high-performance computing, and statistical analysis.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://github.com/dellimone" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://avatars.githubusercontent.com/u/94190273?v=4"
+             alt="Cristiano Baldassi"
+             class="avatar"
+             width="280"
+             height="280">
+      </div>
+    </div>
+  </header>
+
+  <!-- Projects -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <h2 class="section-title fade-in">Projects</h2>
+      <p class="section-subtitle fade-in">Open-source work and academic projects</p>
+      <div class="projects-grid" id="projects-grid">
+        <p class="projects-loading">Loading projects...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="section" id="cv">
+    <div class="container">
+      <h2 class="section-title fade-in">Curriculum Vitae</h2>
+      <p class="section-subtitle fade-in">Education, experience, and skills</p>
+      <div class="cv-layout fade-in">
+
+        <!-- Sidebar -->
+        <aside class="cv-sidebar">
+          <div class="cv-download">
+            <a href="CV_Cristiano_Baldassi.pdf" class="btn btn-outline btn-sm" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF
+            </a>
+          </div>
+          <div class="cv-contact">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                cristiano.baldassi53@gmail.com
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Trieste, Italy
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <a href="https://github.com/dellimone" target="_blank" rel="noopener">github.com/dellimone</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-skills">
+            <h3>Skills</h3>
+            <div class="skills-group">
+              <h4>ML / AI</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+              </div>
+            </div>
+            <div class="skills-group">
+              <h4>HPC</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">MPI</span>
+                <span class="skill-tag">OpenMP</span>
+                <span class="skill-tag">Slurm</span>
+              </div>
+            </div>
+            <div class="skills-group">
+              <h4>Programming</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">Bash</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">R</span>
+              </div>
+            </div>
+            <div class="skills-group">
+              <h4>DevOps</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Ansible</span>
+                <span class="skill-tag">Vagrant</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Linux</span>
+              </div>
+            </div>
+            <div class="skills-group">
+              <h4>Languages</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Italian (native)</span>
+                <span class="skill-tag">English (B2/C1)</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main CV content -->
+        <div class="cv-main">
+          <div class="cv-section">
+            <h3>Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">2024 &mdash; 2026 <small>(exp.)</small></div>
+                <div class="timeline-content">
+                  <h4>Master's in Scientific and Data-Intensive Computing</h4>
+                  <p class="timeline-org">University of Trieste</p>
+                  <p>High Performance Computing and Data Engineering curriculum.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">2021 &mdash; 2024</div>
+                <div class="timeline-content">
+                  <h4>Bachelor's in Artificial Intelligence and Data Analytics</h4>
+                  <p class="timeline-org">University of Trieste &mdash; 110 cum Laude</p>
+                  <p>Thesis: <em>Python Profiling Tools</em>. Comparative analysis of Python profilers for native C/C++ extensions (ML and scientific libraries).</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">2018 &mdash; 2021</div>
+                <div class="timeline-content">
+                  <h4>Bachelor's in Psychological Sciences and Techniques</h4>
+                  <p class="timeline-org">University of Trieste &mdash; 110 cum Laude</p>
+                  <p>Training in experimental design, statistical analysis, and data interpretation. Thesis: <em>Zimbardo's Theory and the Role of Temporal Perspectives on Affective States</em>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h3>Awards</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">2024 &mdash; 2026</div>
+                <div class="timeline-content">
+                  <h4>SISSA Merit-Based Master's Scholarship</h4>
+                  <p class="timeline-org">SISSA &mdash; Scuola Internazionale Superiore di Studi Avanzati</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Get in Touch</h2>
+      <p class="footer-text">
+        Feel free to reach out for collaborations, questions, or just to say hello.
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/dellimone" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:cristiano.baldassi53@gmail.com">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Cristiano Baldassi</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
