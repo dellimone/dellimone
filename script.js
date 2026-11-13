@@ -117,7 +117,7 @@ function setCachedRepos(data) {
       JSON.stringify({ data, timestamp: Date.now() })
     );
   } catch {
-    // localStorage full or unavailable — ignore
+    // localStorage full or unavailable, ignore
   }
 }
 

@@ -8,7 +8,9 @@ For my thesis at **Cybertec (Zucchetti Group)** I built unsupervised anomaly det
 I work mainly in **Python** and **SQL**, with a solid base in statistics, deep learning and high-performance computing.
 Based in **Trieste, Italy** and open to roles in machine learning, data science and software.
 
-🌐 [Website and CV](https://dellimone.github.io/dellimone/) · 💼 [LinkedIn](https://www.linkedin.com/in/cristiano-baldassi-0b24b2405) · ✉️ cristiano.baldassi53@gmail.com
+🌐 [Website and CV](https://dellimone.github.io/dellimone/)  
+💼 [LinkedIn](https://www.linkedin.com/in/cristiano-baldassi-0b24b2405)  
+✉️ cristiano.baldassi53@gmail.com
 
 ### Selected projects
 
@@ -22,4 +24,4 @@ Based in **Trieste, Italy** and open to roles in machine learning, data science 
 
 ### Tools
 
-Python · SQL · PyTorch · scikit-learn · pandas · R · C · MPI / OpenMP / OpenACC · Git · Linux · Docker · Kubernetes
+Python, SQL, PyTorch, scikit-learn, pandas, R, C, MPI, OpenMP, OpenACC, Git, Linux, Docker, Kubernetes
