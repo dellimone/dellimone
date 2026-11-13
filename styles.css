@@ -860,3 +860,51 @@ ul {
   color: var(--color-text-muted);
 }
 .timeline-list li { margin-bottom: 0.35rem; }
+
+/* ================================
+   Plainer look (Nov 2026): serif type, no background effects, no scroll animations
+   ================================ */
+body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+h1, h2, h3, h4, .section-title, .hero-name, .nav-logo {
+  font-family: "Source Serif 4", Georgia, serif;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.skill-tag, .tech-badge, .topic-tag, .language-name, .timeline-date {
+  font-family: "IBM Plex Mono", monospace;
+}
+:root {
+  --color-primary: #1c466d;
+  --color-primary-dark: #12304b;
+  --color-primary-light: #eef2f6;
+  --color-bg-alt: #fafaf8;
+}
+.hero { min-height: auto; padding: 5rem 0 4rem; }
+.hero::before, .hero::after { display: none; }
+.hero-name { font-size: 2.6rem; margin-bottom: 0.25rem; }
+.hero-affiliation { font-weight: 400; font-style: italic; color: var(--color-text-muted); margin-bottom: 1.5rem; }
+.hero-description { margin-bottom: 1rem; color: var(--color-text); }
+.hero-links { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+.hero-links a { text-decoration: underline; text-underline-offset: 3px; }
+.avatar {
+  width: 220px; height: 220px;
+  border-radius: 6px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.navbar { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--color-bg); }
+.fade-in, .fade-in-stagger > .project-card { opacity: 1 !important; transform: none !important; transition: none !important; }
+.project-card, .btn, .filter-btn { box-shadow: none !important; }
+.project-card:hover { transform: none !important; }
+.section { padding: 4rem 0; }
+.section-title { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.section-subtitle { margin-bottom: 2rem; }
+@media (max-width: 768px) {
+  .avatar { width: 160px; height: 160px; }
+  .hero-name { font-size: 2.1rem; }
+}
