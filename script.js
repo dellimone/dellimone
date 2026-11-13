@@ -3,10 +3,20 @@
 // ================================
 
 const GITHUB_USERNAME = "dellimone";
-const EXCLUDED_REPOS = ["dellimone"];
+const EXCLUDED_REPOS = ["dellimone", "CurriculumVitae"];
+
+// Shown first, in this order; the rest follow by last update
+const FEATURED_REPOS = [
+  "TinyPPO",
+  "RAG",
+  "kmeans-hpc",
+  "SuperResolutionFlow",
+  "Missing-Data-Mechanisms-and-Imputation-Study",
+  "CNN-Scene-classifier-CVPR",
+];
 const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=30&sort=pushed`;
 
-const CACHE_KEY = "gh_repos_cache";
+const CACHE_KEY = "gh_repos_cache_v2";
 const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
 
 const LANGUAGE_COLORS = {
@@ -24,6 +34,14 @@ const LANGUAGE_COLORS = {
 };
 
 const FALLBACK_DESCRIPTIONS = {
+  TinyPPO:
+    "PPO for RLHF written from scratch in PyTorch: fine-tunes a small language model and runs an ablation study over 11 hyperparameters.",
+  "kmeans-hpc":
+    "Distributed k-means in C with MPI + OpenMP (CPU) and MPI + OpenACC (multi-GPU), with strong and weak scaling studies on the CINECA Leonardo supercomputer.",
+  RAG:
+    "Controlled benchmark of retrieval-augmented generation pipelines, varying one factor at a time: chunking, embeddings, dense/sparse/hybrid retrieval, reranking and small LLMs.",
+  "CNN-Scene-classifier-CVPR":
+    "CNN classification of 15 scene categories with a small training set: from-scratch networks and transfer learning.",
   "Cloud-Performance-Benchmarks":
     "Benchmarked CPU, memory, disk I/O, and network across VMs (VirtualBox, KVM), Docker, and Kubernetes. Deployed Prometheus/Grafana monitoring for K8s workloads.",
   HeatDiffusionHPC:
@@ -39,6 +57,8 @@ const FALLBACK_DESCRIPTIONS = {
 
 // Tech stacks per project (from CV)
 const PROJECT_TECH = {
+  TinyPPO: ["Python", "PyTorch", "RLHF"],
+  "kmeans-hpc": ["C", "MPI", "OpenMP", "OpenACC", "GPU"],
   SuperResolutionFlow: ["Python", "PyTorch"],
   TimeserieDiffusion: ["Python", "PyTorch"],
   HeatDiffusionHPC: ["C", "MPI", "OpenMP", "Slurm"],
@@ -50,7 +70,7 @@ const PROJECT_TECH = {
     "Prometheus",
   ],
   "CNN-Scene-classifier-CVPR": ["Python", "PyTorch"],
-  RAG: ["Python", "LangChain"],
+  RAG: ["Python", "FAISS", "Hugging Face", "LLM"],
   Quoridor: ["Java"],
   "Missing-Data-Mechanisms-and-Imputation-Study": ["R", "Statistics"],
   OpenModelsHub: ["HTML", "JavaScript"],
@@ -58,6 +78,8 @@ const PROJECT_TECH = {
 
 // Category mapping for filtering
 const PROJECT_CATEGORIES = {
+  TinyPPO: "ml",
+  "kmeans-hpc": "hpc",
   SuperResolutionFlow: "ml",
   TimeserieDiffusion: "ml",
   "CNN-Scene-classifier-CVPR": "ml",
@@ -118,7 +140,14 @@ async function fetchAndRenderProjects() {
 
     const filteredRepos = repos
       .filter((repo) => !EXCLUDED_REPOS.includes(repo.name) && !repo.fork)
-      .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+      .sort((a, b) => {
+        const ia = FEATURED_REPOS.indexOf(a.name);
+        const ib = FEATURED_REPOS.indexOf(b.name);
+        if (ia !== -1 || ib !== -1) {
+          return (ia === -1 ? Infinity : ia) - (ib === -1 ? Infinity : ib);
+        }
+        return new Date(b.pushed_at) - new Date(a.pushed_at);
+      });
 
     grid.innerHTML = "";
     grid.classList.add("fade-in-stagger");
@@ -205,8 +234,8 @@ function createProjectCard(repo) {
   card.dataset.repo = repo.name;
 
   const description =
-    repo.description ||
     FALLBACK_DESCRIPTIONS[repo.name] ||
+    repo.description ||
     "No description available.";
   const language = repo.language || "Unknown";
   const languageColor = LANGUAGE_COLORS[language] || "#858585";

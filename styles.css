@@ -840,3 +840,23 @@ ul {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
+
+/* ================================
+   Additions (Nov 2026)
+   ================================ */
+.hero-status {
+  display: inline-block;
+  margin-bottom: var(--space-lg);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--border-radius);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+.hero-actions { flex-wrap: wrap; }
+.timeline-list {
+  margin: var(--space-sm) 0 0 1.1rem;
+  color: var(--color-text-muted);
+}
+.timeline-list li { margin-bottom: 0.35rem; }
